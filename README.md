@@ -8,9 +8,18 @@ You can use the following snippets in JavaScript.
 
 ##### ngmodule
 ```
-(function() {
+(() => {
     'use strict';
 
+    /**
+     * @ngdoc module
+     * @name ${1:module}
+     * @requires ${2:dependencies}
+     * @description
+     *
+     * The `${1:module}` ${4:description}.
+     *
+     */
     angular
         .module('${1:module}', [
             '${2:dependencies}'
@@ -20,19 +29,31 @@ You can use the following snippets in JavaScript.
 
 ##### ngcontroller
 ```
-(function() {
+(() => {
     'use strict';
 
+    /**
+     * @ngdoc function
+     * @name ${2:controller}
+     * @module ${1:module}
+     * @description
+     *
+     * The `${2:controller}` controller ${5:description}.
+     *
+     */
     angular
         .module('${1:module}')
-        .controller('${2:Controller}', ${2:Controller});
+        .controller('${2:controller}', ${2:controller});
 
-    ${2:Controller}.$inject = ['${3:dependencies}'];
+    ${2:controller}.$inject = ['${3:dependencies}'];
 
-    function ${2:Controller}(${3:dependencies}) {
-        var vm = this;
+    function ${2:controller}(${3:dependencies}) {
+        'ngInject';
+        const self = this;
 
         activate();
+
+        ///////////
 
         function activate() {
 
@@ -43,9 +64,19 @@ You can use the following snippets in JavaScript.
 
 ##### ngfactory
 ```
-(function() {
+(() => {
     'use strict';
 
+    /**
+     * @ngdoc service
+     * @name ${2:factory}
+     * @module ${1:module}
+     * @requires ${3:dependencies}
+     * @description
+     *
+     * The `${2:factory}` factory ${5:description}.
+     *
+     */
     angular
         .module('${1:module}')
         .factory('${2:factory}', ${2:factory});
@@ -53,11 +84,14 @@ You can use the following snippets in JavaScript.
     ${2:factory}.$inject = ['${3:dependencies}'];
 
     function ${2:factory}(${3:dependencies}) {
-        var service = {
+        'ngInject';
+        const service = {
             ${4:function}: ${4:function}
         };
 
         return service;
+
+        ///////////
 
         function ${4:function}() {
 
@@ -68,28 +102,40 @@ You can use the following snippets in JavaScript.
 
 ##### ngdirective
 ```
-(function() {
+(() => {
     'use strict';
 
+    /**
+     * @ngdoc directive
+     * @name ${2:directive}
+     * @module ${1:module}
+     * @restrict ${3:EA}
+     * @description
+     *
+     * The `${2:directive}` directive ${7:description}.
+     *
+     */
     angular
         .module('${1:module}')
         .directive('${2:directive}', ${2:directive});
 
     function ${2:directive}() {
-        var directive = {
+        const directive = {
             restrict: '${3:EA}',
             templateUrl: '${4:templateUrl}',
             scope: {
             },
-            link: linkFunc,
+            link: link,
             controller: ${5:Controller},
-            controllerAs: 'vm',
+            controllerAs: 'self',
             bindToController: true
         };
 
         return directive;
 
-        function linkFunc(scope, el, attr, ctrl) {
+        ///////////
+
+        function link(scope, el, attr, ctrl) {
 
         }
     }
@@ -97,9 +143,12 @@ You can use the following snippets in JavaScript.
     ${5:Controller}.$inject = ['${6:dependencies}'];
 
     function ${5:Controller}(${6:dependencies}) {
-        var vm = this;
+        'ngInject';
+        const self = this;
 
         activate();
+
+        ///////////
 
         function activate() {
 
@@ -110,16 +159,27 @@ You can use the following snippets in JavaScript.
 
 ##### ngservice
 ```
-(function() {
+(() => {
     'use strict';
 
+    /**
+     * @ngdoc service
+     * @name ${2:service}
+     * @module ${1:module}
+     * @requires ${3:dependencies}
+     * @description
+     *
+     * The `${2:service}` service ${5:description}.
+     *
+     */
     angular
         .module('${1:module}')
-        .service('${2:Service}', ${2:Service});
+        .service('${2:service}', ${2:service});
 
-    ${2:Service}.$inject = ['${3:dependencies}'];
+    ${2:service}.$inject = ['${3:dependencies}'];
 
-    function ${2:Service}(${3:dependencies}) {
+    function ${2:service}(${3:dependencies}) {
+        'ngInject';
         this.${4:function} = ${4:function};
 
         function ${4:function}() {
@@ -131,7 +191,7 @@ You can use the following snippets in JavaScript.
 
 ##### ngfilter
 ```
-(function() {
+(() => {
     'use strict';
 
     angular
@@ -140,6 +200,8 @@ You can use the following snippets in JavaScript.
 
     function ${2:filter}() {
         return ${2:filter}Filter
+
+        ///////////
 
         function ${2:filter}Filter(${3:params}) {
             return ${3:params};
