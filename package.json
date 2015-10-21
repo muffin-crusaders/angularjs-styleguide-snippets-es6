@@ -1,7 +1,7 @@
 {
   "name": "angularjs-styleguide-snippets-es6",
   "main": "./lib/angularjs-styleguide-snippets-es6",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A set of AngularJS snippets based on John Papa's style guide in es6.",
   "repository": "https://github.com/muffin-crusaders/angularjs-styleguide-snippets-es6",
   "license": "MIT",
