@@ -1,6 +1,6 @@
 # angularjs-styleguide-snippets package
 
-A set of AngularJS snippets based on John Papa's style guide.
+A set of AngularJS snippets based on John Papa's style guide in es6.
 
 ### Snippets
 
