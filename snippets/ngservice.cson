@@ -5,13 +5,23 @@
       (() => {
           'use strict';
 
+          /**
+           * @ngdoc service
+           * @name ${2:service}
+           * @module ${1:module}
+           * @requires ${3:dependencies}
+           * @description
+           *
+           * The `${2:service}` service ${5:description}.
+           *
+           */
           angular
               .module('${1:module}')
-              .service('${2:Service}', ${2:Service});
+              .service('${2:service}', ${2:service});
 
-          ${2:Service}.$inject = ['${3:dependencies}'];
+          ${2:service}.$inject = ['${3:dependencies}'];
 
-          function ${2:Service}(${3:dependencies}) {
+          function ${2:service}(${3:dependencies}) {
               'ngInject';
               this.${4:function} = ${4:function};
 

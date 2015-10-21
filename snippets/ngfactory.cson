@@ -5,6 +5,16 @@
       (() => {
           'use strict';
 
+          /**
+           * @ngdoc service
+           * @name ${2:factory}
+           * @module ${1:module}
+           * @requires ${3:dependencies}
+           * @description
+           *
+           * The `${2:factory}` factory ${5:description}.
+           *
+           */
           angular
               .module('${1:module}')
               .factory('${2:factory}', ${2:factory});
