@@ -2,7 +2,7 @@
   'ngService':
     'prefix': 'ngservice'
     'body': """
-      (function() {
+      (() => {
           'use strict';
 
           angular
@@ -12,6 +12,7 @@
           ${2:Service}.$inject = ['${3:dependencies}'];
 
           function ${2:Service}(${3:dependencies}) {
+              'ngInject';
               this.${4:function} = ${4:function};
 
               function ${4:function}() {

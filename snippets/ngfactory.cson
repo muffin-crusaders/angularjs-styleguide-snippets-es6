@@ -2,7 +2,7 @@
   'ngFactory':
     'prefix': 'ngfactory'
     'body': """
-      (function() {
+      (() => {
           'use strict';
 
           angular
@@ -12,11 +12,14 @@
           ${2:factory}.$inject = ['${3:dependencies}'];
 
           function ${2:factory}(${3:dependencies}) {
-              var service = {
+              'ngInject';
+              const service = {
                   ${4:function}: ${4:function}
               };
 
               return service;
+
+              ///////////
 
               function ${4:function}() {
 

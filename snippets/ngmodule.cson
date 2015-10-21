@@ -2,7 +2,7 @@
   'ngModule':
     'prefix': 'ngmodule'
     'body': """
-      (function() {
+      (() => {
           'use strict';
 
           angular

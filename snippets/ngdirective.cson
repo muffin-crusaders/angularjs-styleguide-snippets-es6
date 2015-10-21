@@ -2,7 +2,7 @@
   'ngDirective':
     'prefix': 'ngdirective'
     'body': """
-      (function() {
+      (() => {
           'use strict';
 
           angular
@@ -10,20 +10,22 @@
               .directive('${2:directive}', ${2:directive});
 
           function ${2:directive}() {
-              var directive = {
+              const directive = {
                   restrict: '${3:EA}',
                   templateUrl: '${4:templateUrl}',
                   scope: {
                   },
-                  link: linkFunc,
+                  link: link,
                   controller: ${5:Controller},
-                  controllerAs: 'vm',
+                  controllerAs: 'self',
                   bindToController: true
               };
 
               return directive;
 
-              function linkFunc(scope, el, attr, ctrl) {
+              ///////////
+
+              function link(scope, el, attr, ctrl) {
 
               }
           }
@@ -31,9 +33,12 @@
           ${5:Controller}.$inject = ['${6:dependencies}'];
 
           function ${5:Controller}(${6:dependencies}) {
-              var vm = this;
+              'ngInject';
+              const self = this;
 
               activate();
+
+              ///////////
 
               function activate() {
 
